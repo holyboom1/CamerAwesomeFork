@@ -1,5 +1,5 @@
 import 'package:camera_app/utils/file_utils.dart';
-import 'package:camerawesome/camerawesome_plugin.dart';
+import 'package:camerawesome_fork/camerawesome_plugin.dart';
 import 'package:flutter/material.dart';
 
 // this example is based on the camerawesome issue

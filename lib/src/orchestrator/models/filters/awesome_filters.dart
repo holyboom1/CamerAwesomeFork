@@ -1,4 +1,4 @@
-import 'package:camerawesome/src/orchestrator/models/filters/awesome_filter.dart';
+import 'package:camerawesome_fork/src/orchestrator/models/filters/awesome_filter.dart';
 
 // some filters are commented because filter & preview are too different,
 // we need to adjust them

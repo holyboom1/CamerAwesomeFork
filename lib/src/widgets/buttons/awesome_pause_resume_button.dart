@@ -1,10 +1,9 @@
-import 'package:camerawesome/src/widgets/utils/awesome_circle_icon.dart';
+import 'package:camerawesome_fork/src/orchestrator/models/media_capture.dart';
+import 'package:camerawesome_fork/src/orchestrator/states/video_camera_recording_state.dart';
+import 'package:camerawesome_fork/src/widgets/utils/awesome_circle_icon.dart';
+import 'package:camerawesome_fork/src/widgets/utils/awesome_oriented_widget.dart';
+import 'package:camerawesome_fork/src/widgets/utils/awesome_theme.dart';
 import 'package:flutter/material.dart';
-
-import 'package:camerawesome/src/orchestrator/models/media_capture.dart';
-import 'package:camerawesome/src/orchestrator/states/video_camera_recording_state.dart';
-import 'package:camerawesome/src/widgets/utils/awesome_oriented_widget.dart';
-import 'package:camerawesome/src/widgets/utils/awesome_theme.dart';
 
 class AwesomePauseResumeButton extends StatefulWidget {
   final VideoRecordingCameraState state;
@@ -29,8 +28,7 @@ class _AwesomePauseResumeButtonState extends State<AwesomePauseResumeButton>
 
   @override
   void initState() {
-    _controller = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 300));
+    _controller = AnimationController(vsync: this, duration: const Duration(milliseconds: 300));
     _animation = Tween<double>(begin: 0.0, end: 1.0).animate(_controller);
     super.initState();
   }

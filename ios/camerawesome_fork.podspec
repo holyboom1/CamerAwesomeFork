@@ -3,7 +3,7 @@
 # Run `pod lib lint camerawesome.podspec' to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'camerawesome'
+  s.name             = 'camerawesome_fork'
   s.version          = '0.0.1'
   s.summary          = 'An open source camera plugin by the community for the community'
   s.description      = <<-DESC

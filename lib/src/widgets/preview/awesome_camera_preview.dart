@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:camerawesome/camerawesome_plugin.dart';
-import 'package:camerawesome/pigeon.dart';
-import 'package:camerawesome/src/widgets/preview/awesome_preview_fit.dart';
+import 'package:camerawesome_fork/camerawesome_plugin.dart';
+import 'package:camerawesome_fork/pigeon.dart';
+import 'package:camerawesome_fork/src/widgets/preview/awesome_preview_fit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -80,11 +80,9 @@ class AwesomeCameraPreviewState extends State<AwesomeCameraPreview> {
     });
 
     // refactor this
-    _sensorConfigSubscription =
-        widget.state.sensorConfig$.listen((sensorConfig) {
+    _sensorConfigSubscription = widget.state.sensorConfig$.listen((sensorConfig) {
       _aspectRatioSubscription?.cancel();
-      _aspectRatioSubscription =
-          sensorConfig.aspectRatio$.listen((event) async {
+      _aspectRatioSubscription = sensorConfig.aspectRatio$.listen((event) async {
         final previewSize = await widget.state.previewSize(0);
         if ((_previewSize != previewSize || _aspectRatio != event) && mounted) {
           setState(() {
@@ -176,23 +174,20 @@ class AwesomeCameraPreviewState extends State<AwesomeCameraPreview> {
                     });
                   },
                   child: AwesomeCameraGestureDetector(
-                    onPreviewTapBuilder:
-                        widget.onPreviewTap != null && _previewSize != null
-                            ? OnPreviewTapBuilder(
-                                pixelPreviewSizeGetter: () => _previewSize!,
-                                flutterPreviewSizeGetter: () =>
-                                    _previewSize!, //croppedPreviewSize,
-                                onPreviewTap: widget.onPreviewTap!,
-                              )
-                            : null,
+                    onPreviewTapBuilder: widget.onPreviewTap != null && _previewSize != null
+                        ? OnPreviewTapBuilder(
+                            pixelPreviewSizeGetter: () => _previewSize!,
+                            flutterPreviewSizeGetter: () => _previewSize!, //croppedPreviewSize,
+                            onPreviewTap: widget.onPreviewTap!,
+                          )
+                        : null,
                     onPreviewScale: widget.onPreviewScale,
                     initialZoom: widget.state.sensorConfig.zoom,
                     child: StreamBuilder<AwesomeFilter>(
                       //FIX performances
                       stream: widget.state.filter$,
                       builder: (context, snapshot) {
-                        return snapshot.hasData &&
-                                snapshot.data != AwesomeFilter.None
+                        return snapshot.hasData && snapshot.data != AwesomeFilter.None
                             ? ColorFiltered(
                                 colorFilter: snapshot.data!.preview,
                                 child: _textures.first,
@@ -249,15 +244,14 @@ class AwesomeCameraPreviewState extends State<AwesomeCameraPreview> {
         sensor: sensor,
         texture: texture,
         aspectRatio: 1 / _aspectRatioValue!,
-        pictureInPictureConfig:
-            widget.pictureInPictureConfigBuilder?.call(i, sensor) ??
-                PictureInPictureConfig(
-                  startingPosition: Offset(
-                    i * 20,
-                    MediaQuery.of(context).padding.top + 60 + (i * 20),
-                  ),
-                  sensor: sensor,
-                ),
+        pictureInPictureConfig: widget.pictureInPictureConfigBuilder?.call(i, sensor) ??
+            PictureInPictureConfig(
+              startingPosition: Offset(
+                i * 20,
+                MediaQuery.of(context).padding.top + 60 + (i * 20),
+              ),
+              sensor: sensor,
+            ),
       );
       previewFrames.add(frame);
     }

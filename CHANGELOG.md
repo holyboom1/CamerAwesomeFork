@@ -1,3 +1,6 @@
+# 2.0.2
+- Change package name 
+
 # 2.0.1
 
 - 🐛 Fix preview orientation on tablets for iOS and Android

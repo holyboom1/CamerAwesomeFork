@@ -1,7 +1,7 @@
 import 'dart:math';
 
-import 'package:camerawesome/camerawesome_plugin.dart';
-import 'package:camerawesome/pigeon.dart';
+import 'package:camerawesome_fork/camerawesome_plugin.dart';
+import 'package:camerawesome_fork/pigeon.dart';
 import 'package:flutter/material.dart';
 
 /// Tap to take a photo example, with almost no UI

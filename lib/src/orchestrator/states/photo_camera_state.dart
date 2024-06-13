@@ -1,10 +1,10 @@
 import 'dart:ui';
 
-import 'package:camerawesome/camerawesome_plugin.dart';
-import 'package:camerawesome/pigeon.dart';
-import 'package:camerawesome/src/orchestrator/camera_context.dart';
-import 'package:camerawesome/src/orchestrator/states/handlers/filter_handler.dart';
-import 'package:camerawesome/src/photofilters/filters/filters.dart';
+import 'package:camerawesome_fork/camerawesome_plugin.dart';
+import 'package:camerawesome_fork/pigeon.dart';
+import 'package:camerawesome_fork/src/orchestrator/camera_context.dart';
+import 'package:camerawesome_fork/src/orchestrator/states/handlers/filter_handler.dart';
+import 'package:camerawesome_fork/src/photofilters/filters/filters.dart';
 import 'package:collection/collection.dart';
 import 'package:rxdart/rxdart.dart';
 
@@ -27,8 +27,7 @@ class PhotoCameraState extends CameraState {
     required this.filePathBuilder,
     required this.exifPreferences,
   }) : super(cameraContext) {
-    _saveGpsLocationController =
-        BehaviorSubject.seeded(exifPreferences.saveGPSLocation);
+    _saveGpsLocationController = BehaviorSubject.seeded(exifPreferences.saveGPSLocation);
     saveGpsLocation$ = _saveGpsLocationController.stream;
   }
 
@@ -106,8 +105,7 @@ class PhotoCameraState extends CameraState {
 
   bool get hasFilters => cameraContext.availableFilters?.isNotEmpty ?? false;
 
-  List<AwesomeFilter>? get availableFilters =>
-      cameraContext.availableFilters?.toList();
+  List<AwesomeFilter>? get availableFilters => cameraContext.availableFilters?.toList();
 
   /// PRIVATES
 

@@ -1,4 +1,4 @@
-import 'package:camerawesome/camerawesome_plugin.dart';
+import 'package:camerawesome_fork/camerawesome_plugin.dart';
 import 'package:flutter/foundation.dart';
 
 /// Print logs if [CamerawesomePlugins.printLogs] is true, otherwise stays quiet

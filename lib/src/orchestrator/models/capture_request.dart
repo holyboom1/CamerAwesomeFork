@@ -1,4 +1,4 @@
-import 'package:camerawesome/src/orchestrator/models/sensors.dart';
+import 'package:camerawesome_fork/src/orchestrator/models/sensors.dart';
 import 'package:cross_file/cross_file.dart';
 
 abstract class CaptureRequest {

@@ -1,8 +1,8 @@
 import 'dart:ui';
 
-import 'package:camerawesome/camerawesome_plugin.dart';
-import 'package:camerawesome/pigeon.dart';
-import 'package:camerawesome/src/orchestrator/camera_context.dart';
+import 'package:camerawesome_fork/camerawesome_plugin.dart';
+import 'package:camerawesome_fork/pigeon.dart';
+import 'package:camerawesome_fork/src/orchestrator/camera_context.dart';
 
 /// Only image analysis, no preview, no photo or video captures
 class AnalysisCameraState extends CameraState {

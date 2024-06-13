@@ -12,7 +12,7 @@ dependencies:
   cross_file: ^0.3.3+6
   flutter:
     sdk: flutter
-  camerawesome:
+  camerawesome_fork:
     path: ../
   path_provider: ^2.1.1
   google_mlkit_face_detection: ^0.9.0

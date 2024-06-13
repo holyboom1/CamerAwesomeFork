@@ -1,6 +1,6 @@
 import 'dart:typed_data';
 
-import 'package:camerawesome/src/orchestrator/file/content/file_content_stub.dart'
+import 'package:camerawesome_fork/src/orchestrator/file/content/file_content_stub.dart'
     if (dart.library.io) 'file_content_io.dart'
     if (dart.library.html) 'file_content_web.dart';
 import 'package:cross_file/cross_file.dart';

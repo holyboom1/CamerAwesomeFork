@@ -1,15 +1,14 @@
-import 'package:camerawesome/src/widgets/utils/awesome_circle_icon.dart';
-import 'package:camerawesome/src/widgets/utils/awesome_oriented_widget.dart';
-import 'package:camerawesome/src/widgets/utils/awesome_theme.dart';
-import 'package:camerawesome/src/orchestrator/states/photo_camera_state.dart';
+import 'package:camerawesome_fork/src/orchestrator/states/photo_camera_state.dart';
+import 'package:camerawesome_fork/src/widgets/utils/awesome_circle_icon.dart';
+import 'package:camerawesome_fork/src/widgets/utils/awesome_oriented_widget.dart';
+import 'package:camerawesome_fork/src/widgets/utils/awesome_theme.dart';
 import 'package:flutter/material.dart';
 
 class AwesomeLocationButton extends StatelessWidget {
   final PhotoCameraState state;
   final AwesomeTheme? theme;
   final Widget Function(bool saveGpsLocation) iconBuilder;
-  final void Function(PhotoCameraState state, bool saveGpsLocation)
-      onLocationTap;
+  final void Function(PhotoCameraState state, bool saveGpsLocation) onLocationTap;
 
   AwesomeLocationButton({
     super.key,
@@ -21,14 +20,11 @@ class AwesomeLocationButton extends StatelessWidget {
             ((saveGpsLocation) {
               return AwesomeCircleWidget.icon(
                 theme: theme,
-                icon: saveGpsLocation == true
-                    ? Icons.location_pin
-                    : Icons.location_off_outlined,
+                icon: saveGpsLocation == true ? Icons.location_pin : Icons.location_off_outlined,
               );
             }),
         onLocationTap = onLocationTap ??
-            ((state, saveGpsLocation) =>
-                state.shouldSaveGpsLocation(saveGpsLocation));
+            ((state, saveGpsLocation) => state.shouldSaveGpsLocation(saveGpsLocation));
 
   @override
   Widget build(BuildContext context) {

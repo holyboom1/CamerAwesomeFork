@@ -1,7 +1,7 @@
-import 'package:camerawesome/src/orchestrator/states/camera_state.dart';
-import 'package:camerawesome/src/widgets/utils/awesome_circle_icon.dart';
-import 'package:camerawesome/src/widgets/utils/awesome_oriented_widget.dart';
-import 'package:camerawesome/src/widgets/utils/awesome_theme.dart';
+import 'package:camerawesome_fork/src/orchestrator/states/camera_state.dart';
+import 'package:camerawesome_fork/src/widgets/utils/awesome_circle_icon.dart';
+import 'package:camerawesome_fork/src/widgets/utils/awesome_oriented_widget.dart';
+import 'package:camerawesome_fork/src/widgets/utils/awesome_theme.dart';
 import 'package:flutter/material.dart';
 
 class AwesomeCameraSwitchButton extends StatelessWidget {

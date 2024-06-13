@@ -1,8 +1,8 @@
 import 'dart:ui';
 
-import 'package:camerawesome/camerawesome_plugin.dart';
-import 'package:camerawesome/pigeon.dart';
-import 'package:camerawesome/src/orchestrator/camera_context.dart';
+import 'package:camerawesome_fork/camerawesome_plugin.dart';
+import 'package:camerawesome_fork/pigeon.dart';
+import 'package:camerawesome_fork/src/orchestrator/camera_context.dart';
 import 'package:collection/collection.dart';
 
 /// When Camera is in Video mode
@@ -12,8 +12,7 @@ class VideoCameraState extends CameraState {
     required this.filePathBuilder,
   }) : super(cameraContext);
 
-  factory VideoCameraState.from(CameraContext cameraContext) =>
-      VideoCameraState(
+  factory VideoCameraState.from(CameraContext cameraContext) => VideoCameraState(
         cameraContext: cameraContext,
         filePathBuilder: cameraContext.saveConfig!.videoPathBuilder!,
       );
@@ -36,13 +35,12 @@ class VideoCameraState extends CameraState {
   Future<CaptureRequest> startRecording() async {
     CaptureRequest captureRequest =
         await filePathBuilder(sensorConfig.sensors.whereNotNull().toList());
-    _mediaCapture = MediaCapture.capturing(
-        captureRequest: captureRequest, videoState: VideoState.started);
+    _mediaCapture =
+        MediaCapture.capturing(captureRequest: captureRequest, videoState: VideoState.started);
     try {
       await CamerawesomePlugin.recordVideo(captureRequest);
     } on Exception catch (e) {
-      _mediaCapture =
-          MediaCapture.failure(captureRequest: captureRequest, exception: e);
+      _mediaCapture = MediaCapture.failure(captureRequest: captureRequest, exception: e);
     }
     cameraContext.changeState(VideoRecordingCameraState.from(cameraContext));
     return captureRequest;

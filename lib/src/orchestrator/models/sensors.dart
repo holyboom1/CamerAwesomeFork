@@ -1,4 +1,4 @@
-import 'package:camerawesome/camerawesome_plugin.dart';
+import 'package:camerawesome_fork/camerawesome_plugin.dart';
 
 enum CameraAspectRatios {
   ratio_16_9,

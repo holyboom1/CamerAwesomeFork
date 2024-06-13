@@ -1,4 +1,4 @@
-import 'package:camerawesome/pigeon.dart';
+import 'package:camerawesome_fork/pigeon.dart';
 
 extension PermissionsUtils on CamerAwesomePermission {
   static List<CamerAwesomePermission> get needed => [

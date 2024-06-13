@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:camera_app/utils/mlkit_utils.dart';
-import 'package:camerawesome/camerawesome_plugin.dart';
+import 'package:camerawesome_fork/camerawesome_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
 

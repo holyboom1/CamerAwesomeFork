@@ -1,9 +1,8 @@
-import 'package:camerawesome/camerawesome_plugin.dart';
-import 'package:camerawesome/pigeon.dart';
-import 'package:camerawesome/src/orchestrator/file/builder/capture_request_builder.dart';
+import 'package:camerawesome_fork/camerawesome_plugin.dart';
+import 'package:camerawesome_fork/pigeon.dart';
+import 'package:camerawesome_fork/src/orchestrator/file/builder/capture_request_builder.dart';
 
-typedef CaptureRequestBuilder = Future<CaptureRequest> Function(
-    List<Sensor> sensors);
+typedef CaptureRequestBuilder = Future<CaptureRequest> Function(List<Sensor> sensors);
 
 class SaveConfig {
   final CaptureRequestBuilder? photoPathBuilder;

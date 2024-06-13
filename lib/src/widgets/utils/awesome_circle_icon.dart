@@ -1,4 +1,4 @@
-import 'package:camerawesome/src/widgets/utils/awesome_theme.dart';
+import 'package:camerawesome_fork/src/widgets/utils/awesome_theme.dart';
 import 'package:flutter/material.dart';
 
 class AwesomeCircleWidget extends StatelessWidget {

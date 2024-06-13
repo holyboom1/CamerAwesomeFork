@@ -2,7 +2,7 @@
 
 import 'dart:async';
 
-import 'package:camerawesome/camerawesome_plugin.dart';
+import 'package:camerawesome_fork/camerawesome_plugin.dart';
 import 'package:rxdart/rxdart.dart';
 
 // TODO find a way to explain that this sensorconfig is not bound anymore (user changed sensor for example)

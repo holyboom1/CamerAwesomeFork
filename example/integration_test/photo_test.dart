@@ -2,7 +2,7 @@
 import 'dart:io';
 
 import 'package:camera_app/drivable_camera.dart';
-import 'package:camerawesome/camerawesome_plugin.dart';
+import 'package:camerawesome_fork/camerawesome_plugin.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'common.dart';
@@ -50,8 +50,8 @@ void photoTests() {
             sensors: sensors,
             saveConfig: SaveConfig.photo(
               pathBuilder: (sensors) async {
-                final request = await tempPath(
-                    'multiple_photo_${sensor.name}_$idxPicture.jpg')(sensors);
+                final request =
+                    await tempPath('multiple_photo_${sensor.name}_$idxPicture.jpg')(sensors);
                 idxPicture++;
                 return request;
               },
@@ -62,8 +62,7 @@ void photoTests() {
         await allowPermissionsIfNeeded($);
 
         for (int i = 0; i < picturesToTake; i++) {
-          final request = await tempPath(
-              'multiple_photo_${sensor.name}_$idxPicture.jpg')(sensors);
+          final request = await tempPath('multiple_photo_${sensor.name}_$idxPicture.jpg')(sensors);
           final filePath = request.when(single: (single) => single.file!.path);
           await $(AwesomeCaptureButton).tap();
           expect(File(filePath).existsSync(), true);

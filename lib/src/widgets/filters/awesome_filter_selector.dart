@@ -1,4 +1,4 @@
-import 'package:camerawesome/camerawesome_plugin.dart';
+import 'package:camerawesome_fork/camerawesome_plugin.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -28,8 +28,7 @@ class _AwesomeFilterSelectorState extends State<AwesomeFilterSelector> {
   int? _textureId;
   int _selected = 0;
 
-  List<String> get presetsIds =>
-      widget.state.availableFilters!.map((e) => e.id).toList();
+  List<String> get presetsIds => widget.state.availableFilters!.map((e) => e.id).toList();
 
   @override
   void initState() {

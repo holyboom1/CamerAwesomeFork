@@ -1,7 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api
 
-import 'package:camerawesome/src/orchestrator/analysis/analysis_controller.dart';
-import 'package:camerawesome/src/orchestrator/states/camera_state.dart';
+import 'package:camerawesome_fork/src/orchestrator/analysis/analysis_controller.dart';
+import 'package:camerawesome_fork/src/orchestrator/states/camera_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -65,8 +65,7 @@ class _AwesomeCaptureButtonState extends State<AwesomeCaptureButton>
               onPhotoMode: (_) => CameraButtonPainter(),
               onPreparingCamera: (_) => CameraButtonPainter(),
               onVideoMode: (_) => VideoButtonPainter(),
-              onVideoRecordingMode: (_) =>
-                  VideoButtonPainter(isRecording: true),
+              onVideoRecordingMode: (_) => VideoButtonPainter(isRecording: true),
             ),
           ),
         ),

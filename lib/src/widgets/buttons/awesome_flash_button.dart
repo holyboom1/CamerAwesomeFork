@@ -1,11 +1,10 @@
-import 'package:camerawesome/src/widgets/utils/awesome_circle_icon.dart';
-import 'package:camerawesome/src/widgets/utils/awesome_theme.dart';
+import 'package:camerawesome_fork/src/orchestrator/models/camera_flashes.dart';
+import 'package:camerawesome_fork/src/orchestrator/models/sensor_config.dart';
+import 'package:camerawesome_fork/src/orchestrator/states/camera_state.dart';
+import 'package:camerawesome_fork/src/widgets/utils/awesome_circle_icon.dart';
+import 'package:camerawesome_fork/src/widgets/utils/awesome_oriented_widget.dart';
+import 'package:camerawesome_fork/src/widgets/utils/awesome_theme.dart';
 import 'package:flutter/material.dart';
-
-import 'package:camerawesome/src/orchestrator/models/camera_flashes.dart';
-import 'package:camerawesome/src/orchestrator/models/sensor_config.dart';
-import 'package:camerawesome/src/orchestrator/states/camera_state.dart';
-import 'package:camerawesome/src/widgets/utils/awesome_oriented_widget.dart';
 
 class AwesomeFlashButton extends StatelessWidget {
   final CameraState state;
@@ -41,8 +40,7 @@ class AwesomeFlashButton extends StatelessWidget {
                 theme: theme,
               );
             }),
-        onFlashTap = onFlashTap ??
-            ((sensorConfig, flashMode) => sensorConfig.switchCameraFlash());
+        onFlashTap = onFlashTap ?? ((sensorConfig, flashMode) => sensorConfig.switchCameraFlash());
 
   @override
   Widget build(BuildContext context) {

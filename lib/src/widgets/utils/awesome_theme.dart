@@ -1,4 +1,4 @@
-import 'package:camerawesome/src/widgets/utils/awesome_bouncing_widget.dart';
+import 'package:camerawesome_fork/src/widgets/utils/awesome_bouncing_widget.dart';
 import 'package:flutter/material.dart';
 
 typedef ButtonBuilder = Widget Function(
@@ -14,8 +14,7 @@ class AwesomeTheme {
     AwesomeButtonTheme? buttonTheme,
     Color? bottomActionsBackgroundColor,
   })  : buttonTheme = buttonTheme ?? AwesomeButtonTheme(),
-        bottomActionsBackgroundColor =
-            bottomActionsBackgroundColor ?? Colors.black54;
+        bottomActionsBackgroundColor = bottomActionsBackgroundColor ?? Colors.black54;
 
   @override
   bool operator ==(Object other) =>
@@ -26,8 +25,7 @@ class AwesomeTheme {
           bottomActionsBackgroundColor == other.bottomActionsBackgroundColor;
 
   @override
-  int get hashCode =>
-      buttonTheme.hashCode ^ bottomActionsBackgroundColor.hashCode;
+  int get hashCode => buttonTheme.hashCode ^ bottomActionsBackgroundColor.hashCode;
 
   AwesomeTheme copyWith({
     AwesomeButtonTheme? buttonTheme,

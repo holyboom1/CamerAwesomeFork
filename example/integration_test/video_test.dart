@@ -2,7 +2,7 @@
 import 'dart:io';
 
 import 'package:camera_app/drivable_camera.dart';
-import 'package:camerawesome/camerawesome_plugin.dart';
+import 'package:camerawesome_fork/camerawesome_plugin.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'common.dart';
@@ -24,8 +24,7 @@ void main() {
         );
         await allowPermissionsIfNeeded($);
 
-        final request =
-            await tempPath('record_video_single_${sensor.name}.mp4')(sensors);
+        final request = await tempPath('record_video_single_${sensor.name}.mp4')(sensors);
         final filePath = request.when(single: (single) => single.file!.path);
         await $(AwesomeCaptureButton).tap(andSettle: false);
         await allowPermissionsIfNeeded($);
@@ -49,16 +48,14 @@ void main() {
           DrivableCamera(
             sensors: sensors,
             saveConfig: SaveConfig.video(
-              pathBuilder:
-                  tempPath('multiple_video_${sensor.name}_$idxVideo.mp4'),
+              pathBuilder: tempPath('multiple_video_${sensor.name}_$idxVideo.mp4'),
             ),
           ),
         );
         await allowPermissionsIfNeeded($);
 
         for (int i = 0; i < videosToTake; i++) {
-          final request = await tempPath(
-              'multiple_video_${sensor.name}_$idxVideo.mp4')(sensors);
+          final request = await tempPath('multiple_video_${sensor.name}_$idxVideo.mp4')(sensors);
           final filePath = request.when(single: (single) => single.file!.path);
           await $(AwesomeCaptureButton).tap(andSettle: false);
           await allowPermissionsIfNeeded($);
@@ -79,15 +76,13 @@ void main() {
         await $.pumpWidgetAndSettle(
           DrivableCamera(
             sensors: sensors,
-            saveConfig: SaveConfig.video(
-                pathBuilder: tempPath('pause_resume_video_$sensor.mp4')),
+            saveConfig: SaveConfig.video(pathBuilder: tempPath('pause_resume_video_$sensor.mp4')),
           ),
         );
 
         await allowPermissionsIfNeeded($);
 
-        final request =
-            await tempPath('pause_resume_video_$sensor.mp4')(sensors);
+        final request = await tempPath('pause_resume_video_$sensor.mp4')(sensors);
         final filePath = request.when(single: (single) => single.file!.path);
 
         await $(AwesomeCaptureButton).tap(andSettle: false);
@@ -142,8 +137,7 @@ void main() {
       await allowPermissionsIfNeeded($);
 
       for (int i = 0; i < switchingSensors.length; i++) {
-        final request = await tempPath(
-                'switch_sensor_video_${i}_${switchingSensors[i].name}.mp4')(
+        final request = await tempPath('switch_sensor_video_${i}_${switchingSensors[i].name}.mp4')(
             initialSensors);
         final filePath = request.when(single: (single) => single.file!.path);
 

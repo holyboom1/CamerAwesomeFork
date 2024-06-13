@@ -1,9 +1,9 @@
 import 'dart:io';
 
-import 'package:camerawesome/src/orchestrator/models/media_capture.dart';
-import 'package:camerawesome/src/widgets/camera_awesome_builder.dart';
-import 'package:camerawesome/src/widgets/utils/awesome_bouncing_widget.dart';
-import 'package:camerawesome/src/widgets/utils/awesome_oriented_widget.dart';
+import 'package:camerawesome_fork/src/orchestrator/models/media_capture.dart';
+import 'package:camerawesome_fork/src/widgets/camera_awesome_builder.dart';
+import 'package:camerawesome_fork/src/widgets/utils/awesome_bouncing_widget.dart';
+import 'package:camerawesome_fork/src/widgets/utils/awesome_oriented_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -72,8 +72,7 @@ class AwesomeMediaPreview extends StatelessWidget {
             return FutureBuilder<Uint8List>(
                 future: mediaCapture.captureRequest.when(
                   single: (single) => single.file!.readAsBytes(),
-                  multiple: (multiple) =>
-                      multiple.fileBySensor.values.first!.readAsBytes(),
+                  multiple: (multiple) => multiple.fileBySensor.values.first!.readAsBytes(),
                 ),
                 builder: (_, snapshot) {
                   if (snapshot.hasData) {
@@ -104,8 +103,7 @@ class AwesomeMediaPreview extends StatelessWidget {
                   File(
                     mediaCapture.captureRequest.when(
                       single: (single) => single.file!.path,
-                      multiple: (multiple) =>
-                          multiple.fileBySensor.values.first!.path,
+                      multiple: (multiple) => multiple.fileBySensor.values.first!.path,
                     ),
                   ),
                 ),

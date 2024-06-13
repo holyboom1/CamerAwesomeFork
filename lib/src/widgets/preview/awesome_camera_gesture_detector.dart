@@ -1,10 +1,9 @@
 import 'dart:async';
 
-import 'package:camerawesome/pigeon.dart';
+import 'package:camerawesome_fork/pigeon.dart';
+import 'package:camerawesome_fork/src/widgets/preview/awesome_focus_indicator.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
-import 'package:camerawesome/src/widgets/preview/awesome_focus_indicator.dart';
 
 Widget _awesomeFocusBuilder(Offset tapPosition) {
   return AwesomeFocusIndicator(position: tapPosition);
@@ -24,8 +23,8 @@ class OnPreviewTapBuilder {
 }
 
 class OnPreviewTap {
-  final Function(Offset position, PreviewSize flutterPreviewSize,
-      PreviewSize pixelPreviewSize) onTap;
+  final Function(Offset position, PreviewSize flutterPreviewSize, PreviewSize pixelPreviewSize)
+      onTap;
   final Widget Function(Offset tapPosition)? onTapPainter;
   final Duration? tapPainterDuration;
 
@@ -64,8 +63,7 @@ class AwesomeCameraGestureDetector extends StatefulWidget {
   }
 }
 
-class _AwesomeCameraGestureDetector
-    extends State<AwesomeCameraGestureDetector> {
+class _AwesomeCameraGestureDetector extends State<AwesomeCameraGestureDetector> {
   double _zoomScale = 0;
   final double _accuracy = 0.01;
   double? _lastScale;
@@ -84,16 +82,14 @@ class _AwesomeCameraGestureDetector
     return RawGestureDetector(
       gestures: <Type, GestureRecognizerFactory>{
         if (widget.onPreviewScale != null)
-          ScaleGestureRecognizer:
-              GestureRecognizerFactoryWithHandlers<ScaleGestureRecognizer>(
+          ScaleGestureRecognizer: GestureRecognizerFactoryWithHandlers<ScaleGestureRecognizer>(
             () => ScaleGestureRecognizer()
               ..onStart = (_) {
                 _lastScale = null;
               }
               ..onUpdate = (ScaleUpdateDetails details) {
                 _lastScale ??= details.scale;
-                if (details.scale < (_lastScale! + 0.01) &&
-                    details.scale > (_lastScale! - 0.01)) {
+                if (details.scale < (_lastScale! + 0.01) && details.scale > (_lastScale! - 0.01)) {
                   return;
                 } else if (_lastScale! < details.scale) {
                   _zoomScale += _accuracy;
@@ -108,17 +104,12 @@ class _AwesomeCameraGestureDetector
             (instance) {},
           ),
         if (widget.onPreviewTapBuilder != null)
-          TapGestureRecognizer:
-              GestureRecognizerFactoryWithHandlers<TapGestureRecognizer>(
+          TapGestureRecognizer: GestureRecognizerFactoryWithHandlers<TapGestureRecognizer>(
             () => TapGestureRecognizer()
               ..onTapUp = (details) {
-                if (widget
-                        .onPreviewTapBuilder!.onPreviewTap.tapPainterDuration !=
-                    null) {
+                if (widget.onPreviewTapBuilder!.onPreviewTap.tapPainterDuration != null) {
                   _timer?.cancel();
-                  _timer = Timer(
-                      widget.onPreviewTapBuilder!.onPreviewTap
-                          .tapPainterDuration!, () {
+                  _timer = Timer(widget.onPreviewTapBuilder!.onPreviewTap.tapPainterDuration!, () {
                     setState(() {
                       _tapPosition = null;
                     });
@@ -138,8 +129,7 @@ class _AwesomeCameraGestureDetector
       },
       child: Stack(children: [
         Positioned.fill(child: widget.child),
-        if (_tapPosition != null &&
-            widget.onPreviewTapBuilder?.onPreviewTap.onTapPainter != null)
+        if (_tapPosition != null && widget.onPreviewTapBuilder?.onPreviewTap.onTapPainter != null)
           widget.onPreviewTapBuilder!.onPreviewTap.onTapPainter!(_tapPosition!),
       ]),
     );

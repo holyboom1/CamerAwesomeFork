@@ -1,5 +1,5 @@
-import 'package:camerawesome/pigeon.dart';
-import 'package:camerawesome/src/orchestrator/models/sensors.dart';
+import 'package:camerawesome_fork/pigeon.dart';
+import 'package:camerawesome_fork/src/orchestrator/models/sensors.dart';
 
 extension PigeonSensorAdapter on Sensor {
   PigeonSensor toPigeon() {

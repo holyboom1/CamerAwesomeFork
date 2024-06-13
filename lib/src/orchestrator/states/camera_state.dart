@@ -1,6 +1,6 @@
-import 'package:camerawesome/camerawesome_plugin.dart';
-import 'package:camerawesome/pigeon.dart';
-import 'package:camerawesome/src/orchestrator/camera_context.dart';
+import 'package:camerawesome_fork/camerawesome_plugin.dart';
+import 'package:camerawesome_fork/pigeon.dart';
+import 'package:camerawesome_fork/src/orchestrator/camera_context.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/foundation.dart';
 
@@ -82,8 +82,7 @@ abstract class CameraState {
       // new : [wide, front, telephoto]
       final newSensorsCopy = [...previous.sensors.whereNotNull()];
       next = SensorConfig.multiple(
-        sensors: newSensorsCopy
-          ..insert(0, newSensorsCopy.removeAt(newSensorsCopy.length - 1)),
+        sensors: newSensorsCopy..insert(0, newSensorsCopy.removeAt(newSensorsCopy.length - 1)),
         // TODO Initial values are not set in native when set like this
         aspectRatio: aspectRatio ?? CameraAspectRatios.ratio_4_3,
         zoom: zoom ?? 0.0,
@@ -191,6 +190,5 @@ abstract class CameraState {
     return cameraContext.previewTextureId(cameraPosition);
   }
 
-  AnalysisController? get analysisController =>
-      cameraContext.analysisController;
+  AnalysisController? get analysisController => cameraContext.analysisController;
 }

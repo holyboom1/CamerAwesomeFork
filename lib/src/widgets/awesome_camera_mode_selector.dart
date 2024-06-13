@@ -1,7 +1,7 @@
-import 'package:camerawesome/src/orchestrator/models/capture_modes.dart';
-import 'package:camerawesome/src/orchestrator/states/states.dart';
-import 'package:camerawesome/src/widgets/utils/awesome_bouncing_widget.dart';
-import 'package:camerawesome/src/widgets/utils/awesome_theme.dart';
+import 'package:camerawesome_fork/src/orchestrator/models/capture_modes.dart';
+import 'package:camerawesome_fork/src/orchestrator/states/states.dart';
+import 'package:camerawesome_fork/src/widgets/utils/awesome_bouncing_widget.dart';
+import 'package:camerawesome_fork/src/widgets/utils/awesome_theme.dart';
 import 'package:flutter/material.dart';
 
 class AwesomeCameraModeSelector extends StatelessWidget {
@@ -64,11 +64,8 @@ class _CameraModePagerState extends State<CameraModePager> {
   @override
   void initState() {
     super.initState();
-    _index = widget.initialMode != null
-        ? widget.availableModes.indexOf(widget.initialMode!)
-        : 0;
-    _pageController =
-        PageController(viewportFraction: 0.25, initialPage: _index);
+    _index = widget.initialMode != null ? widget.availableModes.indexOf(widget.initialMode!) : 0;
+    _pageController = PageController(viewportFraction: 0.25, initialPage: _index);
   }
 
   @override

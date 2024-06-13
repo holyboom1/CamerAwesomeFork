@@ -1,7 +1,7 @@
-import 'package:camerawesome/pigeon.dart';
-import 'package:camerawesome/src/orchestrator/models/sensors.dart';
-import 'package:camerawesome/src/widgets/preview/awesome_preview_fit.dart';
-import 'package:camerawesome/src/widgets/widgets.dart';
+import 'package:camerawesome_fork/pigeon.dart';
+import 'package:camerawesome_fork/src/orchestrator/models/sensors.dart';
+import 'package:camerawesome_fork/src/widgets/preview/awesome_preview_fit.dart';
+import 'package:camerawesome_fork/src/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class AwesomeCameraFloatingPreview extends StatefulWidget {
@@ -18,16 +18,13 @@ class AwesomeCameraFloatingPreview extends StatefulWidget {
     required this.texture,
     required this.aspectRatio,
     PictureInPictureConfig? pictureInPictureConfig,
-  }) : pictureInPictureConfig =
-            pictureInPictureConfig ?? PictureInPictureConfig(sensor: sensor);
+  }) : pictureInPictureConfig = pictureInPictureConfig ?? PictureInPictureConfig(sensor: sensor);
 
   @override
-  State<AwesomeCameraFloatingPreview> createState() =>
-      _AwesomeCameraFloatingPreviewState();
+  State<AwesomeCameraFloatingPreview> createState() => _AwesomeCameraFloatingPreviewState();
 }
 
-class _AwesomeCameraFloatingPreviewState
-    extends State<AwesomeCameraFloatingPreview> {
+class _AwesomeCameraFloatingPreviewState extends State<AwesomeCameraFloatingPreview> {
   late Offset _position;
 
   @override

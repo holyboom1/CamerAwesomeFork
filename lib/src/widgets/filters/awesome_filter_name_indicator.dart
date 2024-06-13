@@ -1,4 +1,4 @@
-import 'package:camerawesome/camerawesome_plugin.dart';
+import 'package:camerawesome_fork/camerawesome_plugin.dart';
 import 'package:flutter/material.dart';
 
 class AwesomeFilterNameIndicator extends StatelessWidget {
@@ -21,8 +21,7 @@ class AwesomeFilterNameIndicator extends StatelessWidget {
                   borderRadius: BorderRadius.circular(4),
                 ),
                 child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 5, horizontal: 8),
+                  padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 8),
                   child: Text(
                     snapshot.data!.name.toUpperCase().toString(),
                     style: const TextStyle(

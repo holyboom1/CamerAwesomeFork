@@ -1,4 +1,4 @@
-import 'package:camerawesome/camerawesome_plugin.dart';
+import 'package:camerawesome_fork/camerawesome_plugin.dart';
 import 'package:google_mlkit_face_detection/google_mlkit_face_detection.dart';
 
 extension MLKitUtils on AnalysisImage {

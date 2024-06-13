@@ -1,11 +1,11 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:camerawesome/camerawesome_plugin.dart';
-import 'package:camerawesome/pigeon.dart';
-import 'package:camerawesome/src/orchestrator/camera_context.dart';
-import 'package:camerawesome/src/orchestrator/exceptions/camera_states_exceptions.dart';
-import 'package:camerawesome/src/orchestrator/models/camera_physical_button.dart';
+import 'package:camerawesome_fork/camerawesome_plugin.dart';
+import 'package:camerawesome_fork/pigeon.dart';
+import 'package:camerawesome_fork/src/orchestrator/camera_context.dart';
+import 'package:camerawesome_fork/src/orchestrator/exceptions/camera_states_exceptions.dart';
+import 'package:camerawesome_fork/src/orchestrator/models/camera_physical_button.dart';
 
 /// When is not ready
 class PreparingCameraState extends CameraState {
@@ -68,8 +68,7 @@ class PreparingCameraState extends CameraState {
   }) async {
     // wait user accept permissions to init widget completely on android
     if (Platform.isAndroid) {
-      _permissionStreamSub =
-          CamerawesomePlugin.listenPermissionResult()!.listen(
+      _permissionStreamSub = CamerawesomePlugin.listenPermissionResult()!.listen(
         (res) {
           if (res && !_isReady) {
             _init(
@@ -83,33 +82,26 @@ class PreparingCameraState extends CameraState {
         },
       );
     }
-    final grantedPermissions =
-        await CamerawesomePlugin.checkAndRequestPermissions(
+    final grantedPermissions = await CamerawesomePlugin.checkAndRequestPermissions(
       cameraContext.exifPreferences.saveGPSLocation,
       checkCameraPermissions: true,
-      checkMicrophonePermissions:
-          cameraContext.initialCaptureMode == CaptureMode.video,
+      checkMicrophonePermissions: cameraContext.initialCaptureMode == CaptureMode.video,
     );
     if (cameraContext.exifPreferences.saveGPSLocation &&
-        !(grantedPermissions?.contains(CamerAwesomePermission.location) ==
-            true)) {
+        !(grantedPermissions?.contains(CamerAwesomePermission.location) == true)) {
       cameraContext.exifPreferences = ExifPreferences(saveGPSLocation: false);
-      cameraContext.state
-          .when(onPhotoMode: (pm) => pm.shouldSaveGpsLocation(false));
+      cameraContext.state.when(onPhotoMode: (pm) => pm.shouldSaveGpsLocation(false));
     }
     if (onPermissionsResult != null) {
-      onPermissionsResult!(
-          grantedPermissions?.hasRequiredPermissions() == true);
+      onPermissionsResult!(grantedPermissions?.hasRequiredPermissions() == true);
     }
   }
 
   void initPhysicalButton() {
     _physicalButtonStreamSub?.cancel();
-    _physicalButtonStreamSub =
-        CamerawesomePlugin.listenPhysicalButton()!.listen(
+    _physicalButtonStreamSub = CamerawesomePlugin.listenPhysicalButton()!.listen(
       (res) async {
-        if (res == CameraPhysicalButton.volume_down ||
-            res == CameraPhysicalButton.volume_up) {
+        if (res == CameraPhysicalButton.volume_down || res == CameraPhysicalButton.volume_up) {
           cameraContext.state.when(
             onPhotoMode: (pm) => pm.takePhoto(),
             onVideoMode: (vm) => vm.startRecording(),
@@ -123,8 +115,7 @@ class PreparingCameraState extends CameraState {
   @override
   void setState(CaptureMode captureMode) {
     throw CameraNotReadyException(
-      message:
-          '''You can't change current state while camera is in PreparingCameraState''',
+      message: '''You can't change current state while camera is in PreparingCameraState''',
     );
   }
 

@@ -4,8 +4,8 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:ui';
 
-import 'package:camerawesome/camerawesome_plugin.dart';
-import 'package:camerawesome/pigeon.dart';
+import 'package:camerawesome_fork/camerawesome_plugin.dart';
+import 'package:camerawesome_fork/pigeon.dart';
 import 'package:rxdart/rxdart.dart';
 
 /// This class handle the current state of the camera
@@ -142,8 +142,7 @@ class CameraContext {
 
   Future<void> setSensorConfig(SensorConfig newConfig) async {
     sensorConfigController.sink.add(newConfig);
-    if (sensorConfigController.hasValue &&
-        !identical(newConfig, sensorConfigController.value)) {
+    if (sensorConfigController.hasValue && !identical(newConfig, sensorConfigController.value)) {
       sensorConfigController.value.dispose();
     }
     await CamerawesomePlugin.setSensor(
@@ -201,8 +200,8 @@ class CameraContext {
       return CamerawesomePlugin.focusOnPoint(
         position: pixelPosition,
         previewSize: pixelPreviewSize,
-        androidFocusSettings: androidFocusSettings ??
-            AndroidFocusSettings(autoCancelDurationInMillis: 5000),
+        androidFocusSettings:
+            androidFocusSettings ?? AndroidFocusSettings(autoCancelDurationInMillis: 5000),
       );
     }
   }
@@ -216,7 +215,6 @@ class CameraContext {
   }
 
   Future<int?> previewTextureId(int cameraPosition) {
-    return CamerawesomePlugin.getPreviewTexture(cameraPosition)
-        .then(((value) => value?.toInt()));
+    return CamerawesomePlugin.getPreviewTexture(cameraPosition).then(((value) => value?.toInt()));
   }
 }

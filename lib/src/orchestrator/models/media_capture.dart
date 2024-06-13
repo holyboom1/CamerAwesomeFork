@@ -1,4 +1,4 @@
-import 'package:camerawesome/camerawesome_plugin.dart';
+import 'package:camerawesome_fork/camerawesome_plugin.dart';
 import 'package:flutter/foundation.dart';
 
 enum MediaCaptureStatus {
@@ -49,16 +49,11 @@ class MediaCapture {
               singleCaptureRequest.file?.path.endsWith("jpg") == true ||
               singleCaptureRequest.file?.mimeType?.contains("image") == true,
           multiple: (multipleCaptureRequest) =>
-              multipleCaptureRequest.fileBySensor.values.first?.path
-                      .endsWith("jpg") ==
-                  true ||
-              multipleCaptureRequest.fileBySensor.values.first?.mimeType
-                      ?.contains("image") ==
-                  true,
+              multipleCaptureRequest.fileBySensor.values.first?.path.endsWith("jpg") == true ||
+              multipleCaptureRequest.fileBySensor.values.first?.mimeType?.contains("image") == true,
         );
 
   bool get isVideo => !isPicture;
 
-  bool get isRecordingVideo =>
-      isVideo && status == MediaCaptureStatus.capturing;
+  bool get isRecordingVideo => isVideo && status == MediaCaptureStatus.capturing;
 }

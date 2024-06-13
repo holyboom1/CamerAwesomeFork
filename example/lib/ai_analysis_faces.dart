@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:camera_app/utils/mlkit_utils.dart';
-import 'package:camerawesome/camerawesome_plugin.dart';
+import 'package:camerawesome_fork/camerawesome_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mlkit_face_detection/google_mlkit_face_detection.dart';
 import 'package:rxdart/rxdart.dart';

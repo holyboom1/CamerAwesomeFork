@@ -1,4 +1,4 @@
-import 'package:camerawesome/camerawesome_plugin.dart';
+import 'package:camerawesome_fork/camerawesome_plugin.dart';
 import 'package:flutter/material.dart';
 
 class CustomUiExample1 extends StatelessWidget {
@@ -10,12 +10,10 @@ class CustomUiExample1 extends StatelessWidget {
       body: CameraAwesomeBuilder.custom(
         builder: (cameraState, preview) {
           return cameraState.when(
-            onPreparingCamera: (state) =>
-                const Center(child: CircularProgressIndicator()),
+            onPreparingCamera: (state) => const Center(child: CircularProgressIndicator()),
             onPhotoMode: (state) => TakePhotoUI(state),
             onVideoMode: (state) => RecordVideoUI(state, recording: false),
-            onVideoRecordingMode: (state) =>
-                RecordVideoUI(state, recording: true),
+            onVideoRecordingMode: (state) => RecordVideoUI(state, recording: true),
           );
         },
         saveConfig: SaveConfig.photoAndVideo(),

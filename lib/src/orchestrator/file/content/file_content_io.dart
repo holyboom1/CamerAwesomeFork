@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:camerawesome/src/orchestrator/file/content/file_content.dart';
+import 'package:camerawesome_fork/src/orchestrator/file/content/file_content.dart';
 import 'package:cross_file/cross_file.dart';
 
 class FileContentImpl extends BaseFileContent {

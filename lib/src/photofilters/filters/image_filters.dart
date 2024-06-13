@@ -1,6 +1,6 @@
 import 'dart:typed_data';
 
-import 'package:camerawesome/src/photofilters/filters/filters.dart';
+import 'package:camerawesome_fork/src/photofilters/filters/filters.dart';
 
 ///The [ImageSubFilter] class is the abstract class to define any ImageSubFilter.
 mixin ImageSubFilter on SubFilter {

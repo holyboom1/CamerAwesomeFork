@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:camerawesome/camerawesome_plugin.dart';
-import 'package:camerawesome/src/logger.dart';
+import 'package:camerawesome_fork/camerawesome_plugin.dart';
+import 'package:camerawesome_fork/src/logger.dart';
 
 class AnalysisController {
   final OnImageForAnalysis? onImageListener;

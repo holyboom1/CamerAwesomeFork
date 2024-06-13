@@ -1,7 +1,7 @@
 import 'dart:math';
 
-import 'package:camerawesome/camerawesome_plugin.dart';
-import 'package:camerawesome/pigeon.dart';
+import 'package:camerawesome_fork/camerawesome_plugin.dart';
+import 'package:camerawesome_fork/pigeon.dart';
 import 'package:flutter/material.dart';
 
 final previewWidgetKey = GlobalKey();
@@ -243,8 +243,7 @@ class PreviewSizeCalculator {
       case CameraPreviewFit.cover:
         maxSize = Size(constraints.maxWidth, constraints.maxHeight);
 
-        if (constraints.maxWidth / constraints.maxHeight >
-            previewSize.width / previewSize.height) {
+        if (constraints.maxWidth / constraints.maxHeight > previewSize.width / previewSize.height) {
           _offset = Offset((hDiff * zoom) * 2, 0);
           // _offset = Offset(0, constraints.maxHeight - maxSize.height);
         } else {
@@ -253,8 +252,7 @@ class PreviewSizeCalculator {
         }
         break;
       case CameraPreviewFit.contain:
-        maxSize = Size(
-            nativePreviewSize.width * zoom, nativePreviewSize.height * zoom);
+        maxSize = Size(nativePreviewSize.width * zoom, nativePreviewSize.height * zoom);
         _offset = Offset(
           constraints.maxWidth - maxSize.width,
           constraints.maxHeight - maxSize.height,

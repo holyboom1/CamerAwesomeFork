@@ -1,4 +1,4 @@
-import 'package:camerawesome/camerawesome_plugin.dart';
+import 'package:camerawesome_fork/camerawesome_plugin.dart';
 import 'package:flutter/material.dart';
 
 class AwesomeZoomSelector extends StatefulWidget {
@@ -34,9 +34,7 @@ class _AwesomeZoomSelectorState extends State<AwesomeZoomSelector> {
       stream: widget.state.sensorConfig$,
       builder: (context, sensorConfigSnapshot) {
         initAsync();
-        if (sensorConfigSnapshot.data == null ||
-            minZoom == null ||
-            maxZoom == null) {
+        if (sensorConfigSnapshot.data == null || minZoom == null || maxZoom == null) {
           return const SizedBox.shrink();
         }
 

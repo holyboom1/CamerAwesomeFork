@@ -1,11 +1,11 @@
-import 'package:camerawesome/src/orchestrator/models/media_capture.dart';
-import 'package:camerawesome/src/orchestrator/states/states.dart';
-import 'package:camerawesome/src/widgets/awesome_media_preview.dart';
-import 'package:camerawesome/src/widgets/buttons/awesome_camera_switch_button.dart';
-import 'package:camerawesome/src/widgets/buttons/awesome_capture_button.dart';
-import 'package:camerawesome/src/widgets/buttons/awesome_pause_resume_button.dart';
-import 'package:camerawesome/src/widgets/camera_awesome_builder.dart';
-import 'package:camerawesome/src/widgets/utils/awesome_theme.dart';
+import 'package:camerawesome_fork/src/orchestrator/models/media_capture.dart';
+import 'package:camerawesome_fork/src/orchestrator/states/states.dart';
+import 'package:camerawesome_fork/src/widgets/awesome_media_preview.dart';
+import 'package:camerawesome_fork/src/widgets/buttons/awesome_camera_switch_button.dart';
+import 'package:camerawesome_fork/src/widgets/buttons/awesome_capture_button.dart';
+import 'package:camerawesome_fork/src/widgets/buttons/awesome_pause_resume_button.dart';
+import 'package:camerawesome_fork/src/widgets/camera_awesome_builder.dart';
+import 'package:camerawesome_fork/src/widgets/utils/awesome_theme.dart';
 import 'package:flutter/material.dart';
 
 class AwesomeBottomActions extends StatelessWidget {

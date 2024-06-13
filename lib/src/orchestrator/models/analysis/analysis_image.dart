@@ -2,8 +2,8 @@ import 'dart:io';
 import 'dart:math';
 import 'dart:ui';
 
-import 'package:camerawesome/camerawesome_plugin.dart';
-import 'package:camerawesome/pigeon.dart';
+import 'package:camerawesome_fork/camerawesome_plugin.dart';
+import 'package:camerawesome_fork/pigeon.dart';
 import 'package:flutter/foundation.dart';
 
 part 'analysis_image_ext.dart';
@@ -95,8 +95,7 @@ abstract class AnalysisImage {
     }
 
     return switch ((rotation, preview.sensor?.position)) {
-      (InputAnalysisImageRotation.rotation0deg, SensorPosition.back) =>
-        const CanvasTransformation(
+      (InputAnalysisImageRotation.rotation0deg, SensorPosition.back) => const CanvasTransformation(
           scale: Point(-1, 1),
           translate: Point(-1, 0),
         ),

@@ -1,4 +1,4 @@
-import 'package:camerawesome/camerawesome_plugin.dart';
+import 'package:camerawesome_fork/camerawesome_plugin.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -76,9 +76,7 @@ class CameraPage extends StatelessWidget {
               const Spacer(),
               Builder(builder: (context) {
                 return Container(
-                  color: AwesomeThemeProvider.of(context)
-                      .theme
-                      .bottomActionsBackgroundColor,
+                  color: AwesomeThemeProvider.of(context).theme.bottomActionsBackgroundColor,
                   child: const Align(
                     alignment: Alignment.bottomCenter,
                     child: Padding(
