@@ -9,4 +9,4 @@ Use our awesome built-in interface or customize it as you want.
 
 ---
 
-## Fork of [camera](https://pub.dev/packages/camera) package
+## Fork of [camerawesome](https://pub.dev/packages/camerawesome) package

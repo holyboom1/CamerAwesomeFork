@@ -1,3 +1,6 @@
+# 2.0.3
+- Update readme 
+
 # 2.0.2
 - Change package name 
 
